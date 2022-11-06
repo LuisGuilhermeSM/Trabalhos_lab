@@ -3,7 +3,7 @@
 int main(int argc, char** argv){
     int num, soma;
     soma = 0 ;
-    printf("Digite um número: ");
+    printf("Digite um número: \n");
     scanf("%d", &num);
     
     for( ; num > 0 ; num = num -1){
