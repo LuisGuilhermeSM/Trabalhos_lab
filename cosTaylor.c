@@ -21,7 +21,8 @@ int main(int argc, char** argv){
         cos = cos + pot(-1 , n) * pot(x * M_PI, 2 * n) / fat(2*n);
     };
 
-    printf("cos(%lfpi) = %f ", x, cos);
+    //printf("cos(%lfpi) = %f ", x, cos);
+    printf("%lf", cos);
 
     return 0;
 

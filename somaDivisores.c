@@ -12,7 +12,8 @@ int main(int argc, char** argv){
 
     };
 
-    printf("Soma dos divisores de %d = %d", num, soma);
+    //printf("Soma dos divisores de %d = %d", num, soma);
+    printf("%d", soma);
     return 0;
 
 }

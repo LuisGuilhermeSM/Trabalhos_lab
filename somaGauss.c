@@ -10,8 +10,9 @@ int main(int argc, char** argv){
         soma = soma + num;
         
     };
-    printf("Soma = %d\n", soma);
-
+    
+    //printf("Soma = %d\n", soma);
+    printf("%d\n", soma);
 
     return 0;
 }
