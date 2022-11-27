@@ -1,5 +1,4 @@
 #include <stdio.h>
-//typedef enum bool {False, True};
 
 
 int soma_digitos_quadrados(int num);
