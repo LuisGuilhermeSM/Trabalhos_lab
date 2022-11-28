@@ -11,7 +11,7 @@ int main(int argc, char** argv){
 
     de = sqrt((xa - xb) * (xa - xb) + (ya - yb) * (ya - yb)  );
 
-    printf("de = %f ", de);
+    printf("%f ", de);
 
     return 0;
 

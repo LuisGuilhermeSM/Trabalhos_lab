@@ -4,7 +4,7 @@ void intervalo(int a, int b);
 
 int main(int arcg, char** argv){
     int a, b;
-    printf(" Digite o intervalo desejado: \n");
+    printf(" Digite o intervalo desejado em que o primeiro numero seja menor que o segundo: \n");
     scanf("%d %d", &a, &b);
 
     if(b > a){

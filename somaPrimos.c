@@ -5,7 +5,7 @@ int soma_primos(int inicio_a, int final_b);
 
 int main(int argc, char** argv){
     int a, b;
-    printf(" Digite o intervalo desejado: \n");
+    printf(" Digite o intervalo desejado em que o primeiro numero deve ser menor que o segundo: \n");
     scanf("%d %d", &a, &b);
 
     printf("%d", soma_primos(a, b));
