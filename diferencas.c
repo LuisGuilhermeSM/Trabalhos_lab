@@ -1,28 +1,27 @@
 #include <stdio.h>
 
 void iniciar_vetor(float * vetor, int tam);
-void printar_vetor(float * vetor, int tam, int menor, int maior);
+void printar_vetor(float * vetor, int tam );
+void vetor_resposta(float * vetor_analisado, float * vetor_res, float tam_v_r);
 float min_vetor(float * vetor, int tam);
 float max_vetor(float * vetor, int tam);
 
 int main(int argc, char** argv){
-    int n;
-    float min, max;
+    int n, tam_resp;
     printf("Digite o numero de elementos do vetor: \n");
     scanf("%d", &n);
-    float vetor[n]; // so funciona no c99
+    tam_resp = n - 1;
+    float vetor[n], vetor_r[tam_resp]; // so funciona no c99
     iniciar_vetor(vetor, n);
-    //printar_vetor(vetor, n);
-    min = min_vetor(vetor, n);
-    max = max_vetor(vetor, n);
-    printar_vetor(vetor, n, min, max);
-    //printf("\nMinimo: %g", min);
-    //printf("\nMaximo: %g", max);
+    vetor_resposta(vetor, vetor_r, tam_resp);
+    printar_vetor(vetor_r, tam_resp);
+    printf(" Minimo: %g", min_vetor(vetor_r, tam_resp));
+    printf(" Maximo: %g", max_vetor(vetor_r, tam_resp));
 
-
+    
+    
 
     return 0;
-
 }
 
 void iniciar_vetor(float * vetor, int tam){
@@ -33,23 +32,20 @@ void iniciar_vetor(float * vetor, int tam){
 
 }
 
-void printar_vetor(float * vetor, int tam, int menor, int maior){
-    for(int i = 0; i < tam; i++ ){
-        //printf("%g ", vetor[i]);
-        if(vetor[i] == menor){
-            printf("%g< ", vetor[i]);
-        }
-        else if(vetor[i] == maior)
-        {
-            printf("%g> ", vetor[i]);
-        }
-        else{
-            printf("%g ", vetor[i]);
-        }
-        
-        /*if(i != (tam - 1) ){
-            printf(", ");
-        } */   
+
+void printar_vetor(float * vetor, int tam ){
+    printf("%g", vetor[0]);
+    for(int i = 1; i < tam; i++ ){
+        printf(", %g", *(vetor + i));  
+    }
+
+}
+
+void vetor_resposta(float * vetor_analisado, float * vetor_res, float tam_v_r){
+    
+    for(int i = 0; i < tam_v_r; i++ ){
+        vetor_res[i] = *(vetor_analisado + (i + 1)) - *(vetor_analisado + i);
+
     }
 }
 
