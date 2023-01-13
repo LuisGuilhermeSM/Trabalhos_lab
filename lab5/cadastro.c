@@ -34,7 +34,7 @@ int main(int argc, char** argv){
     Cadastro usuarios[num_usuarios];
     //printf("%d", num_usuarios);
 
-    for(int i = 0; i < num_usuarios; i++){
+    for(int i = 0; i < num_usuarios; i += 1 ){
         //printf("\noi");
         usuarios[i] = cadastrar();
     }
@@ -57,19 +57,19 @@ Cadastro cadastrar(){
     scanf("%d.%d", &usuario.altura.metro, &usuario.altura.cm);
     usuario.altura.cm = cmt(usuario.altura.cm);
     //printf("peso:\n");
-    scanf("%f", &usuario.peso);
+    scanf("%f%*c", &usuario.peso);
     
 
     return usuario;
 }
 
 void imprimir_cadastro(int num_usuarios, Cadastro *usuarios){
-     char strmes[13][4] = {
+    char strmes[13][4] = {
     "", "JAN", "FEV", "MAR", "ABR", "MAI", "JUN",
     "JUL", "AGO", "SET", "OUT", "NOV", "DEZ"
     };
     
-    for(int i = 0; i < num_usuarios; i++){
+    for(int i = 0; i < num_usuarios; i+= 1){
         printf("%s; %02d%s%04d; %dm.%d; %.1fKg \n",usuarios[i].nome, usuarios[i].data.dia, strmes[usuarios[i].data.mes], usuarios[i].data.ano, usuarios[i].altura.metro, usuarios[i].altura.cm, usuarios[i].peso);
     }
 }
@@ -77,10 +77,12 @@ void imprimir_cadastro(int num_usuarios, Cadastro *usuarios){
 char * inciar_string(){
     char str;
     char *string = (char *) malloc(1);
+    //printf("%x \n", string);
     int tam = 0;
     
     while(1){
         str = getchar();
+        //printf("%c", str);
         if( str != '\n' ){
             string = (char *) realloc(string, (tam+ 1) * sizeof(char) );
             string[tam] = str;
