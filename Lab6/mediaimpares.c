@@ -3,7 +3,6 @@
 
 int *sequencia(int num_elementos, int num_inicial);
 double media(int * seq, int num_elementos);
-void limpar(int * vet, int num_elementos);
 
 int main(int argc, char** argv){
     int num_elementos, num_inicial, *seq;
@@ -64,8 +63,3 @@ double media(int * seq, int num_elementos){
     return res;
 }
 
-void limpar(int * vet, int num_elementos){
-    for(int i = 0; i < num_elementos; i++){ 
-        free(vet);
-    }
-}

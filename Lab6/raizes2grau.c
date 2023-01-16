@@ -9,7 +9,7 @@ int main(int argc, char** argv){
     //printf("%x\n", x2);
     int num_raiz;
     printf("Digite os termos a,b e c da equacao de segundo grau:\n");
-    scanf("%f %f %f*%c", &a, &b, &c);
+    scanf("%f %f %f%*c", &a, &b, &c);
     num_raiz = raizes(a, b, c, &x1, &x2);
     //printf("%d %f %f", num_raiz, x1, x2);
     if(num_raiz > 1){
